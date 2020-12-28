@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <math.h>
+
+
+int main(){
+
+    int i, j;
+    int diceRol1, diceRol2, rolls;
+    int sum1, sum2;
+    sum1 = sum2 = 0;
+
+    char prediction, choice;
+
+    printf("How many rolls do you want?\n");
+    scanf("%d", &rolls);
+
+    // Rolling dice number 1
+    for(i = 0; i <= rolls; i++){
+        diceRol1 = (rand() % 6) + 1;
+        printf("%d\n", diceRol1);
+        sum1 += diceRol1;
+    }
+
+    printf("%d", sum1);
+    printf("\n\n");
+
+    printf("What is your prediction? (H, L, S)\n");
+    scanf(" %c", &prediction);
+    choice = toupper(prediction);
+
+    // Rolling dice number 2
+    for(j = 0; j <= rolls; j++){
+        diceRol2 = (rand() % 6) + 1;
+        printf("%d\n", diceRol2);
+        sum2 += diceRol2;
+    }
+
+    printf("%d", sum2);
+    printf("\n\n");
+
+    // Comparing the choices with the sums
+    if(choice == 'H'){
+        if(sum1 < sum2){
+            printf("Good job\n");
+        }else{
+            printf("U suck\n");
+        }
+    }else if(choice == 'L'){
+        if(sum1 > sum2){
+            printf("Good job again\n");
+        }else{
+            printf("Missed again\n");
+        }
+    }else if(choice == 'S'){
+        if(sum1 == sum2){
+            printf("Nailed it\n");
+        }else{
+            printf("Wrong again Mr.\n");
+        }
+    }
+
+    return 0;
+}
