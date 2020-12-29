@@ -13,6 +13,9 @@ int main(){
     sum1 = sum2 = 0;
 
     char prediction, choice;
+    
+    // Use current time as seed for random generator
+    srand(time(0));
 
     printf("How many rolls do you want?\n");
     scanf("%d", &rolls);
