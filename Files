@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){    
+    
+    /* Create file. */
+
+    FILE * fPtr;
+
+    fPtr = fopen("test.txt", "w");
+
+    fprintf(fPtr, "Welcome");
+
+    fPtr = fopen("test.txt", "r");
+
+    fclose(fPtr);
+
+    /* Read file. */
+
+    FILE * fPtr;
+
+    char singleLine[150];
+
+    while(!feof(fPtr)){
+        fgets(singleLine, 150, fPtr);
+        puts(singleLine);
+    }
+
+    fclose(fPtr);
+
+    /* Append */
+
+    FILE * fPtr;
+
+    fPtr = fopen("test.txt", "a");
+
+    fprintf(fPtr, "\n all aboard.");
+
+    fclose(fPtr);
+
+    /* Random file access */
+
+    FILE * fPtr;
+
+    /* w+ for opening and reading a file*/ 
+    fPtr = fopen("test.txt", "w+");
+    fputs("Hello everyone on this beautiful day.", fPtr);
+
+    /* Change the file starting from the beginning  */
+    fseek(fPtr, 33, SEEK_SET);
+    fputs("night", fPtr);
+
+    /* Change the file starting from the end */
+    fseek(fPtr, -4, SEEK_END);
+    fputs("show", fPtr);
+
+    return 0;
+
+}
