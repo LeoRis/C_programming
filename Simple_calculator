@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <math.h>
 
-int calculator(int, int);
+int calculator(int x, int y);
 
 int main(){
 
@@ -16,7 +16,7 @@ int main(){
     printf("What is the value of the second operand? : \n");
     scanf("%d", &b);
 
-    int calculator(a, b);
+    calculator(a, b);
 
     return 0;
 }
@@ -29,24 +29,24 @@ int main(){
 
         switch(operator){
             case '+': {
-                printf("The addition is: %d", x + y);
+                printf("The addition is: %d\n", x + y);
                 break;
             }
             case '-': {
-                printf("The subtraction is: %d", x - y);
+                printf("The subtraction is: %d\n", x - y);
                 break;
             }
             case '*': {
-                printf("The multiplication is: %d", x * y);
+                printf("The multiplication is: %d\n", x * y);
                 break;
             }
             case '/': {
                 switch(y){
                     case 0: {
-                        printf("You can't have 0 as divisor ");
+                        printf("You can't have 0 as divisor \n");
                         break;
                     }
-                default: printf("The division is: %d", x / y);
+                default: printf("The division is: %d\n", x / y);
                 }
                 break;
             }
