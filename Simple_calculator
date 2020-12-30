@@ -10,19 +10,19 @@ int main(){
 
     int a, b;
 
-    printf("What is the value of the first operand? : \n");
-    scanf("%d", &a);
-
-    printf("What is the value of the second operand? : \n");
-    scanf("%d", &b);
-
     calculator(a, b);
 
     return 0;
 }
-    int calculator(x, y){
+    int calculator(int x, int y){
 
         char operator, choise;
+        
+        printf("What is the value of the first operand? : \n");
+        scanf("%d", &x);
+
+        printf("What is the value of the second operand? : \n");
+        scanf("%d", &y);
         
         printf("Which operation would you like to perform (x, /, +, -)? : \n");
         scanf(" %c", &operator);
