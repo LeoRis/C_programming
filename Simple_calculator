@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <math.h>
+
+int calculator(int, int);
+
+int main(){
+
+    int a, b;
+
+    printf("What is the value of the first operand? : \n");
+    scanf("%d", &a);
+
+    printf("What is the value of the second operand? : \n");
+    scanf("%d", &b);
+
+    int calculator(a, b);
+
+    return 0;
+}
+    int calculator(x, y){
+
+        char operator, choise;
+        
+        printf("Which operation would you like to perform (x, /, +, -)? : \n");
+        scanf(" %c", &operator);
+
+        switch(operator){
+            case '+': {
+                printf("The addition is: %d", x + y);
+                break;
+            }
+            case '-': {
+                printf("The subtraction is: %d", x - y);
+                break;
+            }
+            case '*': {
+                printf("The multiplication is: %d", x * y);
+                break;
+            }
+            case '/': {
+                switch(y){
+                    case 0: {
+                        printf("You can't have 0 as divisor ");
+                        break;
+                    }
+                default: printf("The division is: %d", x / y);
+                }
+                break;
+            }
+            default: printf("Wrong operator!\n");
+            break;
+        }
+
+        printf("Do you like to try again? Y/N\n");
+        scanf(" %c", &choise);
+
+        while(toupper(choise) == 'Y')
+            printf("Try again.");
+            return calculator(x, y);
+    }
