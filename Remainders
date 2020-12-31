@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main(){
+
+    int n, x;
+
+    int i = 0;
+
+    int noRemainder = 0;
+    int oneRemainder = 0;
+    int twoRemainder = 0;
+
+    printf("How many numbers you will enter? ");
+    scanf("%d", &n);
+
+    while(i < n){
+
+        printf("Enter number: ");
+        scanf("%d", &x);
+
+        if(x % 3 == 0){
+            noRemainder++;
+        } else if(x % 3 == 1){
+            oneRemainder++;
+        } else if(x % 3 == 2){
+            twoRemainder++;
+        }else{
+            return;
+        }
+        i++;
+    }
+
+    printf("Remainder is 0: %d\n", noRemainder);
+    printf("Remainder is 1: %d\n", oneRemainder);
+    printf("Remainder is 2: %d\n", twoRemainder);
+    return 0;
+}
