@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int counter, i;
+int sum = 0;
+
+int numberDivider(int n);
+
+int main(){
+
+    int from, to;
+
+    printf("Please enter range: ");
+    scanf("%d%d", &from, &to);
+
+    for(i = from; i < to; i++){
+        if((i % numberDivider(i)) == 0){
+            counter++;
+        }
+    }
+
+    printf("There are %d 4 digit numbers that have 0 remainder divided by its 2 halves.", counter);
+
+    return 0;
+}
+
+    int numberDivider(int n){
+        sum = (n / 100) + (n % 100);
+        return sum;
+    }
