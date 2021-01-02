@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(){
+
+    int subtraction, i, n = 0, number = 0;
+
+    int sumEven = 0, sumOdd = 0;
+
+    printf("How many numbers you will enter?\n");
+    scanf("%d", &n);
+    
+    printf("Start entering them\n");
+
+    for(i = 1; i <= n; i++){
+        scanf("%d", &number);
+        if(i % 2){
+            sumOdd += number;
+        }else{
+            sumEven += number;
+        }
+    }
+
+    subtraction = sumEven - sumOdd;
+
+    int result = subtraction < 10 && subtraction > -10 ? "Both sums are alike." : "Both sums differ.";
+    printf("%s", result);
+
+    return 0;
+}
