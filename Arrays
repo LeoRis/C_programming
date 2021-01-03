@@ -1,0 +1,220 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <math.h>
+#define MAX 100
+
+int main(){
+    
+    int pol_position, position, maxSum, sum, previous, next;
+    int flag = 0; /* You can add a flag, or simply put "1" as a condition for while and if */
+
+    scanf("%d%d", &previous, &next);
+
+    pol_position = position = 2;
+
+    maxSum = sum = previous + next;
+
+    while(!flag){
+        if(previous < 0 || next < 0){
+            break;
+        }
+        sum = previous + next;
+        if(sum > maxSum){
+            maxSum = sum;
+            pol_position = position;
+        }
+        previous = next;
+        scanf("%d", &next);
+        position++;
+    }
+    if(!flag){ /* As per the example, the condition is: "position > 2". I've changed it to 1 to see if it works. */
+        printf("The numbers are at position %d and %d. Their sum is %d", pol_position - 1, pol_position, maxSum);
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    int array1[MAX], array2[MAX];
+    int n1, n2, element, i;
+
+    printf("What is the size of the 1st array? : \n");
+    scanf("%d", &n1);
+
+    printf("What is the size of the 2nd array? : \n");
+    scanf("%d", &n2);
+
+    if(n1 != n2){
+        printf("The arrays sizes differ.");
+    }else{
+        printf("Insert elements of array1: \n");
+        for(i = 0; i < n1; i++){
+            printf("array1[%d] = ", i);
+            scanf("%d", &array1[i]);
+        }
+        printf("Insert elements of array2: \n");
+        for(i = 0; i < n2; i++){
+            printf("array2[%d] = ", i);
+            scanf("%d", &array2[i]);
+        }
+        /* Check if arrays are equal */
+        for(i = 0; i < n1; i++){
+            if(array1[i] != array2[i]){
+                break;
+            }
+            printf("%d\n", array1[i]);
+        }
+        if(i == n1){
+            printf("The arrays are equal.");
+        }else{
+            printf("The arrays differ.");
+        }
+
+    }
+    returno 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    int m, fC[MAX] = {0};
+    char ch, counter;
+
+    while((ch = getchar()) != EOF){
+        if(isalpha(ch)){
+            if(islower(ch)){
+                ch = toupper(ch);
+            }
+        fC[ch]++;
+        }
+    }
+
+    printf("The text contains: \n");
+    printf("Letter          Number of events\n");
+
+    for(counter = 'A'; counter <= 'Z'; counter++){
+        printf("%c \t\t%d\n", counter, fC[counter]);
+    }
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    int array1[MAX];
+    int counter, i, n;
+
+    int sumEven = 0;
+    int sumOdd = 0;
+
+    printf("How many elements will this array have?\n");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++){
+        printf("Insert numbers[%d]: ", i);
+        scanf("%d", &array1[i]);
+    }
+
+    for(i = 0; i < n; i ++){
+        if(!(array1[i] % 2)){ // Putting "!" in order to set the first expression to be true, so the even numbers sum will be calculated first.
+            sumEven += array1[i];
+        }else{
+            sumOdd += array1[i];
+        }
+    }
+    printf("The relation is: %.2f", ((float)sumEven / sumOdd));
+
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    int vectorA[MAX];
+    int vectorB[MAX];
+    int sum = 0;
+    int i, n;
+
+    printf("What will be the size of the vectors?\n");
+    scanf("%d", &n);
+
+    printf("Insert vectorA coordinates: \n");
+
+    for(i = 0; i < n; i++){
+        printf("vectorA[%d] =", i);
+        scanf("%d", &vectorA[i]);
+    }
+
+    printf("Insert vectorB coordinates: \n");
+
+        for(i = 0; i < n; i++){
+        printf("vectorB[%d] =", i);
+        scanf("%d", &vectorB[i]);
+    }
+
+    for(i = 0; i < n; i++){
+        sum += vectorA[i] * vectorB[i];
+    }
+
+    printf("The scalar sum is: %d", sum);
+
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    int array[MAX];
+    int n, i;
+
+    printf("How many elements?\n");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++){
+        printf("array[%d] = ", i);
+        scanf("%d", &array[i]);
+    }
+
+    for(i = 0; i < n; i++){
+        if(array[i] < array[i + 1] && array[i + 1] < array[i + 2]){
+            printf("Array is ascending.");
+            break;
+        }else if(array[i] > array[i + 1] && array[i + 1] > array[i + 2]){
+            printf("Array is descending.");
+            break;
+        }else{
+            printf("Neither");
+            break;
+        }
+    }
+
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    int array[MAX], n, j, k, i, deleted = 0;
+
+    printf("How many elements?\n");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++){
+        printf("array[%d] = ", i);
+        scanf("%d", &array[i]);
+    }
+    for(i = 0; i < n - deleted; i++){
+        for(j = i + 1; j < n - deleted; j++){
+            if(array[i] == array[j]){
+                for(k = j; k < n - 1 - deleted; k++){
+                    array[k] = array[k + 1];
+                }
+                deleted++;
+                j--;
+            }
+        }
+    }
+    n -= deleted;
+    printf("The new array is: \n");
+    for(i = 0; i < n; i++){
+        printf("%d\t", array[i]);
+    }
+    return 0;
+}
