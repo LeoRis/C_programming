@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <math.h>
+
+int number;
+
+//Calculates the difference between the closest prime number and the number entered.
+int primeLarger(int number);
+
+    int primeLarger(int number){
+
+        int prime = 0;
+        int sum = 0;
+        int i = 1;
+        int j = 2;
+
+            for(i; i < number; i++){
+                sum = number + i;
+
+                // Checking if a number is prime.
+                while(j < number){
+                    if(sum % j == 0){
+                        break;
+                    }
+                    j++;
+                    prime = sum;
+                }
+            }
+
+        return printf("The total is: %d", prime - number);
+    }
+
+int main(){
+
+    int digit;
+
+    printf("Insert a number: \n");
+    scanf("%d", &digit);
+
+    primeLarger(digit);
+
+    return 0;
+}
