@@ -26,7 +26,7 @@ int primeLarger(int number);
                 }
             }
 
-        return printf("The total is: %d", prime - number);
+        return printf("The difference between %d and %d is: %d", prime, number, prime - number);
     }
 
 int main(){
