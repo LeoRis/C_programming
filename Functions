@@ -40,3 +40,62 @@ int main(){
 
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int number;
+
+int primeNumber(int number);
+int sumNumber(int number);
+    
+    //Checks if a number is a prime.
+    int primeNumber(int number){
+
+        int i;
+
+        if(number < 4){
+            return 1;
+        }else{
+            if((number % 2) == 0){
+                return 0;
+            }else{
+                i = 3;
+                while(i * i <= number){
+                    if(number % i == 0){
+                        return 0;
+                    }
+                    i += 2;
+                }
+            }
+        }
+        return 1;
+
+    }
+    
+    //Sums the numbers that a numbers consists of.
+    int sumNumber(int number){
+        int sum = 0;
+        while(number){
+            sum += number % 10;
+            number /= 10;
+        }
+        return sum;
+    }
+
+int main(){
+
+int digit;
+   int counter;
+
+   for(int i = 2; i <= 9999; i++){
+
+       if(primeNumber(i) && sumNumber(primeNumber(i))){
+           counter++;
+       }
+   }
+
+   printf("There are %d numbers that meet the condition.\n", counter);
+   return 0;
+}
+
+
