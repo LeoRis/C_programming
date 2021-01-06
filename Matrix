@@ -16,7 +16,8 @@ int main() {
     scanf("%d", &dimen);
 
     printf("Start entering them: \n");
-
+    
+    //Enter the matrix elements and find out which one has the highest and the lowest value.
     for(i = 0; i < dimen; i++){
         for(j = 0; j < dimen; j++){
             scanf("%d", &matrix[i][j]);
@@ -30,9 +31,17 @@ int main() {
         }
     }
 
+    //Replacing the values on the main diagonal with the value of the difference between the highest and the lowest value.
     for(i = 0, j = 0; i < dimen, j < dimen; i++, j++){
         matrix[i][j] = max - min;
     }
+    
+    //Another solution to swap the values.
+    for(i = 0; i < dimen; i++){
+        matrix[i][i] = max - min;
+    }
+       
+    //Print out the matrix with the swapped values.
     for(i = 0; i < dimen; ++i){
         printf("\n");
         for(j = 0; j < dimen; ++j){
