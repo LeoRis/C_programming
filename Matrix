@@ -51,3 +51,42 @@ int main() {
 
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main() {
+
+    int matrix[MAX][MAX];
+
+    int i, j;
+
+    int n = 0;
+    int m = 0;
+
+    int sumEvenCol = 0;
+    int sumOddCol = 0;
+
+    printf("Insert matrix dimensions: \n");
+    scanf("%d%d", &n, &m);
+
+    printf("Start entering them: \n");
+
+    //Enter the matrix elements and fill the sums with the values of the even and odd columns.
+    for(i = 0; i < n; i++){
+        for(j = 0; j < m; j++){
+            scanf("%d", &matrix[i][j]);
+            if(j % 2 == 0){
+                sumEvenCol += matrix[i][j];
+            }else{
+                sumOddCol += matrix[i][j];
+            }
+        }
+    }
+
+    printf("The sumEvenCol is %d.\n", sumEvenCol);
+    printf("The sumOddCol is %d.\n", sumOddCol);
+
+    printf("%d", sumEvenCol - sumOddCol);
+
+    return 0;
+}
