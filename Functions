@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <math.h>
+#define MAX 12
 
 int number;
 
-//Calculates the difference between the closest prime number and the number entered.
+// Calculates the difference between the closest prime number and the number entered.
 int primeLarger(int number);
 
     int primeLarger(int number){
@@ -48,7 +49,7 @@ int number;
 int primeNumber(int number);
 int sumNumber(int number);
     
-    //Checks if a number is a prime.
+    // Checks if a number is a prime.
     int primeNumber(int number){
 
         int i;
@@ -72,7 +73,7 @@ int sumNumber(int number);
 
     }
     
-    //Sums the numbers that a numbers consists of.
+    // Sums the numbers that a numbers consists of.
     int sumNumber(int number){
         int sum = 0;
         while(number){
@@ -150,5 +151,54 @@ int main(){
 
     sumFaktoriel(digit);
     
+    return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int number;
+
+void bubble(int number[], int n);
+
+    void bubble(int number[], int n){
+
+        int i, j;
+        int temp = 0;
+
+        // Checks between two adjacent numbers which one is larger.
+        for(i = n; i > 0; i--){         // Used to iterate in the array in order to set the numbers in ascending order.
+            for(j = 1; j < i; j++){
+                if(number[j - 1] > number[j]){
+                    temp = number[j - 1];
+                    number[j - 1] = number[j];
+                    number[j] = temp;
+                }
+            }
+        }
+    }
+
+
+int main(){
+
+    int number[MAX];
+    int i = 0;
+    int n = 0;
+
+    printf("Insert number of array elements: \n");
+    scanf("%d", &n);
+
+    printf("Insert array elements: \n");
+
+    for(i = 0; i < n; i++){
+        scanf("%d", &number[i]);
+    }
+
+    bubble(number, n);
+
+    for(i = n - 1; i >= 0; i--){    // Prints the array in descending order.
+    for(i = 0; i < n; i++){         // Prints the array in ascending order.
+        printf("%d\t", number[i]);
+    }
+
     return 0;
 }
