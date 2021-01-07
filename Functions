@@ -98,4 +98,57 @@ int digit;
    return 0;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+int number;
+
+int faktoriel(int number);
+
+    int faktoriel(int number){
+
+        int sum = 1;
+
+        while(number > 0){
+            sum *= number;
+            number--;
+        }
+
+        printf("The result is: %d\n", sum);
+
+        return sum;
+    }
+
+
+int sumFaktoriel(int number);
+
+    int sumFaktoriel(int number){
+
+        int i = 1;
+        int sum1 = 0;
+        int sumF = 0;
+
+        while(i <= number){
+            sum1 += i;
+            sumF += faktoriel(sum1);
+            i++;
+        }
+
+        printf("The final result is: %d\n", sumF);
+
+        return 1;
+    }
+
+int main(){
+
+    int digit;
+
+    printf("Insert digit: ");
+    scanf("%d", &digit);
+
+
+    faktoriel(digit);
+
+    sumFaktoriel(digit);
+    
+    return 0;
+}
