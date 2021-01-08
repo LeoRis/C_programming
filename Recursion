@@ -39,3 +39,30 @@ int main(){
 
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int sumDigit(int n);
+
+    // Sums the digits in the number.
+    int sumDigit(int n){
+        if(n == 0){
+            return 0;
+        }else{
+            return n % 10 + sumDigit(n / 10);
+        }
+    }
+    
+int main(){
+
+    int number;
+
+    printf("Insert a number: \n");
+    scanf("%d", &number);
+
+    sumDigit(number);
+
+    printf("The sum is: %d", sumDigit(number));
+
+    return 0;
+}
