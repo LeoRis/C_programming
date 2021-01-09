@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define MAX 100
+
+// Counts how many time a certain character appears in the string.
+int countChar(char *array, char mark){
+
+    int total = 0;
+
+    while(*array != '\0'){
+        total += (*array == mark);
+        array++;
+    }
+
+    return total;
+}
+
+int main(){
+
+    char s[MAX], sign;
+
+    printf("Insert string: \n");
+    gets(s);
+
+    printf("Insert required mark: \n");
+    sign = getchar();
+
+    printf("At the string \"%s\" , the mark \"%c\" shows up %d times.", s, sign, countChar(s, sign));
+
+    return 0;
+}
