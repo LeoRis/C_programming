@@ -97,3 +97,37 @@ int main(){
 
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int euclid(int m, int n){
+    if(n == 0){
+        return m;
+    }else{
+        return euclid(n, m % n); // Swaps places if the first operand is smaller than the second!
+    }
+}
+
+int main(){
+
+    int i, n, array[MAX];
+
+    printf("Insert array size: \n");
+    scanf("%d", &n);
+
+    printf("Insert array elements: \n");
+
+    for(i = 0; i < n; i++){
+        scanf("%d", &array[i]);
+    }
+
+    int GCD = euclid(array[0], array[1]);
+
+    for(i = 2; i < n; i++){
+        GCD = euclid(GCD, array[i]);
+    }
+
+    printf("The GCD is: %d", GCD);
+
+    return 0;
+}
