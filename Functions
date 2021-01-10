@@ -202,3 +202,54 @@ int main(){
 
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int checkDigit(int n);
+
+int checkDigit(int n){
+    if(n / 1000 == 0 && n <= 999 && n >= 100){
+        return 1;
+    }else if(n < 100){
+        return 0;
+        printf("The number has only 2 digits.\n");
+    }else{
+        return 0;
+        printf("The number has more than 3 digits.\n");
+    }
+    return 0;
+}
+
+int main(){
+
+    int visitor;
+
+    printf("Please enter your 3 digit number: \n");
+    scanf("%d", &visitor);
+
+    if(checkDigit(visitor) && visitor / 100 == 1){
+        if(visitor % 3 == 0){
+            printf("VIP visitor at entry 1");
+        }else if(visitor % 3 == 1){
+            printf("VIP visitor at entry 2");
+        }else if(visitor % 3 == 2){
+            printf("VIP visitor at entry 3");
+        }
+    }else if(!checkDigit(visitor) && visitor > 999){
+        printf("Wrong number - more than 3 digits.\n");
+    }else if(!checkDigit(visitor) && visitor < 100){
+        printf("Wrong number - less than 3 digits.\n");
+    }
+
+    if(checkDigit(visitor) && visitor / 100 >= 2 && visitor / 100 <= 9){
+        if(visitor % 3 == 0){
+            printf("Regular visitor at entry 1");
+        }else if(visitor % 3 == 1){
+            printf("Regular visitor at entry 2");
+        }else if(visitor % 3 == 2){
+            printf("Regular visitor at entry 3");
+        }
+    }
+
+    return 0;
+}
