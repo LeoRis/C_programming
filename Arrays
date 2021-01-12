@@ -268,3 +268,57 @@ int main(){
 
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main(){
+
+    int i = 0;
+    int j = 0;
+    int n = 0;
+    int t = 0;
+    int array[MAX][MAX];
+    int matrix[MAX][MAX];
+
+    printf("Insert array dimensions: \n");
+    scanf("%d", &n);
+
+    printf("Insert array elements: \n");
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            scanf("%d", &array[i][j]);
+        }
+    }
+
+    printf("\nThis is the array:\n");
+    for(i = 0; i < n; i++){
+        printf("\n");
+        for(j = 0; j < n; j++){
+            printf("%d\t", array[i][j]);
+        }
+    }
+
+    printf("\nWhat will be the value of \"t\" ?\n");
+    scanf("%d", &t);
+
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            if(array[i][j] > t){
+                // Sums the elements that are positioned diagonaly in regards to each element from the initial array.
+                matrix[i][j] = array[i - 1][j - 1] + array[i - 1][j + 1] + array[i + 1][j - 1] + array[i + 1][j + 1];
+            }else{
+                array[i][j] == 0;
+            }
+        }
+    }
+
+    printf("\nThis is the matrix:\n");
+    for(i = 0; i < n; i++){
+        printf("\n");
+        for(j = 0; j < n; j++){
+            printf("%d\t", matrix[i][j]);
+        }
+    }
+
+    return 0;
+}
