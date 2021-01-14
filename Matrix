@@ -99,6 +99,7 @@ int main(){
     int column = 0;
     int i = 0;
     int j = 0;
+    int k = 0;
     int array[MAX][MAX];
     int matrix[MAX][MAX];
 
@@ -132,8 +133,8 @@ int main(){
             matrix[i][column / 2] = array[i][column / 2] * 2;
                 for(j = 0; j == column; j++){
                     matrix[i][j] = array[i][j] + array[i][column - j - 1];
-                        for(j = column - 1; j > column / 2; j--){
-                            matrix[i][j] = array[i][j] + array[i][column - j - 1];
+                        for(k = column - 1; k > column / 2; k--){
+                            matrix[i][k] = array[i][k] + array[i][column - k - 1];
                         }
                 }
         }
