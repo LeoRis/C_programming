@@ -90,3 +90,68 @@ int main() {
 
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main(){
+
+    int row = 0;
+    int column = 0;
+    int i = 0;
+    int j = 0;
+    int array[MAX][MAX];
+    int matrix[MAX][MAX];
+
+    printf("Insert array rows: \n");
+    scanf("%d", &row);
+
+    printf("Insert array columns: \n");
+    scanf("%d", &column);
+
+    printf("Insert array elements: \n");
+
+    for(i = 0; i < row; i++){
+        for(j = 0; j < column; j++){
+            scanf("%d", &array[i][j]);
+        }
+    }
+
+    printf("\nHere is the array:\n");
+
+    for(i = 0; i < row; i++){
+        printf("\n");
+            for(j = 0; j < column; j++){
+                printf("%d\t", array[i][j]);
+            }
+    }
+
+    j = 0;
+
+    if(column % 2 != 0 && j < column){
+        for(i = 0; i < row; i++){
+            matrix[i][column / 2] = array[i][column / 2] * 2;
+                for(j = 0; j == column; j++){
+                    matrix[i][j] = array[i][j] + array[i][column - 1];
+                    column--;
+                }
+        }
+
+    }else if(column % 2 == 0 && j < column){
+        for(i = row - 1; i >= 0; i--){
+            for(j = 0; j <= column - 1; j++){
+                matrix[i][j] = array[i][j] + array[i][column - j - 1];
+            }
+        }
+    }
+
+    printf("\n\nHere is the matrix:\n");
+
+    for(i = 0; i < row; i++){
+        printf("\n");
+            for(j = 0; j < column; j++){
+                printf("%d\t", matrix[i][j]);
+            }
+    }
+
+    return 0;
+}
