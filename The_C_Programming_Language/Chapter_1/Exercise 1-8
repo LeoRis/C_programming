@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(){
+
+    int c;
+
+    int nl = 0;
+    int nt = 0;
+    int ns = 0;
+
+    while((c = getchar()) != EOF){
+            
+        if(c == '\n'){
+            nl++;
+        }else if(c == '\t'){
+            nt++;
+        }else if(c == ' '){
+            ns++;
+        }
+    }
+
+    printf("\nThere are %d new lines, %d new tabs and %d new spaces!\n", nl, nt, ns);
+
+    return 0;
+}
