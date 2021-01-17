@@ -1,0 +1,8 @@
+#include <stdio.h>
+
+main(){
+
+    printf("\"getchar() != EOF\" returns: %d", getchar() != EOF);
+    
+    return 0;
+}
