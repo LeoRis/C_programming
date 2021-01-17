@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+main(){
+
+    int c;
+    
+    while((c = getchar()) != EOF){
+            
+        if(c == ' '){
+            if((c = getchar()) == ' '){
+                ;
+            }
+            putchar(c);
+        }else if(c != ' '){
+            putchar(c);
+        }
+    
+    }
+
+    return 0;
+}
