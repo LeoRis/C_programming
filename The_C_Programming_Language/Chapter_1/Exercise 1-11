@@ -1,0 +1,32 @@
+#include <stdio.h>
+#define IN 1
+#define OUT 0
+
+main(){
+  
+    // Count lines, words and characters.
+    int c, WORD;
+    int newChar = 0;
+    int newLine = 0;
+    int newWord = 0;
+
+
+    WORD = OUT;
+
+    while((c = getchar()) != EOF){
+        ++newChar;
+            if(c == '\n'){
+                ++newLine;
+            }
+            if(c == '\n' || c == '\t' || c == ' '){
+                WORD = OUT;
+            }else if(WORD == OUT){
+                WORD = IN;
+                ++newWord;
+            }
+    }
+
+    printf("There are:\n%d new characters\n%d new lines\n%d new words.\n", newChar, newLine, newWord);
+
+    return 0;
+}
