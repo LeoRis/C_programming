@@ -2,7 +2,7 @@
 #define IN 1
 #define OUT 0
 
-main(){
+int main(){
   
     // Count lines, words and characters.
     int c, WORD;
