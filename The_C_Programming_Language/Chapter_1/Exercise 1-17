@@ -1,0 +1,46 @@
+#include <stdio.h>
+#define MAX 1000
+
+int getline(char line[], int maxline);
+
+int main(){
+
+    int len;               /* current line length */
+
+    char line[MAXLINE];    /* current input line */
+
+
+    while((len = getline(line, MAXLINE)) > 0){
+
+        printf("%d: %s", len, line);
+
+        if(len > 80){
+            printf("The array longer than 80 chars is: %s", line);
+        }
+    }
+
+    printf("\n");
+    return 0;
+}
+
+// Read a line into s, return length
+int getline(char s[], int lim){
+
+    int c, i, j;
+
+    for(i = 0, j = 0; (c = getchar())!=EOF && c != '\n'; ++i){
+        if(i < lim - 1){
+            s[j++] = c;
+        }
+    }
+
+    if(c == '\n'){
+        if(i <= lim - 1){
+            s[j++] = c;
+        }
+        ++i;
+    }
+
+    s[j] = '\0';
+    return i;
+}
