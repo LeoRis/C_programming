@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define MAX 1000
+
+int currentLine(char s[], int maxline);
+
+int main(){
+
+    char c;
+    char current[MAX];
+    int i;
+    
+    // Removes blanks, tabs, new lines.
+    while((c = getchar()) != EOF){
+        if(c != ' ' && c != '\t' && c != '\n'){
+            current[i++] = c;
+            }
+    }
+
+    printf("%s", current);
+
+    return 0;
+}
+
+// Returns the array from input.
+int currentLine(char s[], int maxline){
+
+    int c, i;
+
+    while((c = getchar()) != EOF){
+        for(i = 0; i < maxline - 1; i++){
+            s[i++] = c;
+        }
+    }
+
+    return s[i];
+}
