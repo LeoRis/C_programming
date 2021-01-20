@@ -6,10 +6,10 @@ void copy(char to[], char from[]);
 
 int main(){
 
-    int len;               // Current line length
-    int max;               // Maximum length so far
-    char currentLine[MAX];    // Current input line
-    char longestLine[MAX]; // Longest line
+    int len;                    // Current line length
+    int max;                    // Maximum length so far
+    char currentLine[MAX];      // Current input line
+    char longestLine[MAX];      // Longest line
 
     max = 0;
 
