@@ -1,0 +1,56 @@
+#include <stdio.h>
+#define MAX 1000
+
+int get_line(char line[], int maxline);
+void reverse(char from[], char to[]);
+
+int main() {
+
+    int len;
+    char current[MAX];
+    char reversed[MAX];
+
+    while((len = get_line(current, MAX)) > 0) {
+
+        reverse(current, reversed);
+        printf("%s\n", reversed);
+
+    }
+
+    return 0;
+}
+
+// Checks array length.
+int get_line(char s[], int lim) {
+
+    int c, i;
+
+    for (i = 0; i < lim - 1 && (c = getchar()) != EOF && c != '\n'; ++i){
+        s[i] = c;
+    }
+    if (c == '\n'){
+        s[i++] = c;
+    }
+
+    s[i] = '\0';
+    return i;
+}
+
+// Takes "from" array and puts it into "to" reversed.
+void reverse(char from[], char to[]){
+
+    int len = 0;
+    int i, c;
+
+    for(i = 0; from[i] != '\n'; i++){
+        len++;
+    }
+
+    int n = 0;
+
+    for(i = len; i >= 0; i--){
+        c = from[i];
+        to[n] = c;
+        n++;
+    }
+}
