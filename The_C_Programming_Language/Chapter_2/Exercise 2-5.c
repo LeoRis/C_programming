@@ -41,8 +41,7 @@ int main(){
     answer = any(s1, s2);
 
     if(answer >= 0){
-		printf("First match is \"%c\" in position %d of s1.\n",
-            s1[answer], answer);
+	printf("First match is \"%c\" in position %d of s1.\n", s1[answer], answer);
     }else{
         printf("\"%s\" contains no characters from \"%s\"\n", s1, s2);
     }
