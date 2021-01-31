@@ -117,4 +117,3 @@ void expand(char * s1, char * s2) {
     }
     s1[j] = s2[i];    // The null character
 }
-
