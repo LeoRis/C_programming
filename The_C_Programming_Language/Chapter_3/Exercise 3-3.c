@@ -3,7 +3,7 @@
 
 void expand(char * s1, char * s2);
 
-int main(void) {
+int main() {
     char *s[] = { "a-z-", "z-a-", "-1-6-",
                   "a-ee-a", "a-R-L", "1-9-1",
                   "5-5", NULL };
@@ -37,7 +37,7 @@ void expand(char * s1, char * s2) {
     int j = 0;
 
 
-    /*  Loop through characters in s2  */
+    //  Loop through characters in s2 
 
     while ( s2[i] ) {
         switch( s2[i] ) {
