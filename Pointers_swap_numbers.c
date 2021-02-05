@@ -19,8 +19,8 @@ int main(){
 
     swap(&number1, &number2);
 
-    printf("Number 1 is %d.\n", number1);
-    printf("Number 2 is %d.\n", number2);
+    printf("New number 1 is %d.\n", number1);
+    printf("New number 2 is %d.\n", number2);
 
     return 0;
 }
