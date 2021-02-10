@@ -21,8 +21,7 @@ void printArray(char *s){
     char c;
 
     while((c = getchar()) != '\n'){
-        *(s + i) = c;
-        i++;
+        *(s + i++) = c;
     }
     *(s + i) = '\0';
 
