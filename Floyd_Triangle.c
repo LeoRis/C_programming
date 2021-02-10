@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Program to print Floyd's Triangle.
 int main(){
 
     int rows, i, j, n;
