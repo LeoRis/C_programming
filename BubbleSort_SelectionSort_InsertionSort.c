@@ -14,8 +14,8 @@ void swap(int *x, int *y){
 void bubbleSort(int *s, int length){
     int i, j;
 
-    for(i = 0; i < length; i++){
-        for(j = 0; j < length - 1; j++){
+    for(i = 1; i < length; i++){
+        for(j = 0; j < length - i; j++){
             if(*(s + j) > *(s + j + 1)){
                 swap(s + j, s + j + 1);
             }
