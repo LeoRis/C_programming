@@ -10,10 +10,17 @@ int main(){
 
     printf("Enter second number: ");
     scanf("%d", &number2);
-
-    while(number2){
-        number1++;
-        number2--;
+    
+    if(number2 > 0){
+        while(number2){
+            number1++;
+            number2--;
+        }
+    }else if(number2 < 0){
+        while(number2){
+            number1--;
+            number2++;
+        }
     }
 
     printf("The sum of the 2 numbers is: %d", number1);
