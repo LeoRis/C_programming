@@ -22,3 +22,24 @@ int main(){
 
     return 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main(){
+
+    int a = 0;
+    int b = 1;
+    int i, n, result;
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    for(i = 0; i <= n; i++){
+        printf("%d ", a);
+
+        result = a + b;
+        a = b;
+        b = result;
+    }
+    return 0;
+}
