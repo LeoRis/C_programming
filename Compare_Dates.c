@@ -41,12 +41,15 @@ long difference(date d1, date d2){
 }
 
 int main(){
-    date d1 = {14, 9, 1989};
-    date d2;
-    d2.day = 16;
-    d2.month = 12;
-    d2.year = 1989;
+    
+    date d1, d2;
 
+    printf("Insert date 1: ");
+    scanf("%d%d%d", &d1.day, &d1.month, &d1.year);
+
+    printf("Insert date 2: ");
+    scanf("%d%d%d", &d2.day, &d2.month, &d2.year);
+    
     if(!comparison(d1, d2)){
         printf("The dates are the same!\n");
     }else if(comparison(d1, d2) == 1){
