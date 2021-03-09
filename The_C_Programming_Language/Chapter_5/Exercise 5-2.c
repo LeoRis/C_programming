@@ -1,15 +1,3 @@
-/*
- * Exercise 5-2 from The C Programming Language, 2nd edition, by Kernighan
- * and Ritchie.
- *
- * "Write getfloat, the floating-point analog of getint. What type does
- * getfloat return as its function value?"
- */
-
-/*
- * Here's the getint function, from section 5.2:
- */
-
 #include <ctype.h>
 #include <stdio.h>
 
